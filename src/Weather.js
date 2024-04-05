@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
 import axios from "axios";
@@ -14,6 +15,7 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       iconUrl:
         "https://basmilius.github.io/weather-icons/production/fill/all/clear-day.svg",
@@ -48,7 +50,9 @@ export default function Weather() {
         <div className="Weather-info">
           <h1>{weatherData.city}</h1>
           <ul className="mb-4">
-            <li>Wednesday, 07:00</li>
+            <li>
+              <FormattedDate date={weatherData.date} />
+            </li>
             <li className="text-capitalize">{weatherData.description}</li>
           </ul>
           <div className="row">

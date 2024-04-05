@@ -10,12 +10,8 @@ export default function App() {
         <Weather />
         <footer>
           This project was coded by
-          <a href="/" target="_blank">
-            {" "}
-            Syaibatul{" "}
-          </a>{" "}
-          and is
-          <a href="/" target="_blank">
+          <a href="https://github.com/shizop"> Syaibatul </a> and is
+          <a href="https://github.com/shizop/weather-react-fp">
             {" "}
             open sourced on Github
           </a>
